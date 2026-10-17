@@ -1,0 +1,492 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jimil Jingar | AI &amp; Data Science</title>
+<meta name="description" content="Jimil Jingar, M.Tech AI &amp; Data Science student at Parul University. Machine learning, explainable AI and fairness in AI. Open to ML and data science roles.">
+<meta property="og:title" content="Jimil Jingar | AI &amp; Data Science">
+<meta property="og:description" content="Machine learning, explainable AI and fairness in AI. M.Tech AI &amp; Data Science, Parul University.">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://jimil-jingar.github.io/">
+<meta property="og:url" content="https://jimil-jingar.github.io/">
+<meta property="og:image" content="https://jimil-jingar.github.io/assets/photo.jpg">
+<meta name="author" content="Jimil Jingar">
+<meta name="theme-color" content="#0B1424">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230B1424'/%3E%3Ctext x='32' y='42' font-family='monospace' font-size='24' font-weight='700' fill='%234FD1E8' text-anchor='middle'%3EJJ%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme:dark;
+  --bg:#0B1424;
+  --surface:#111D33;
+  --surface-2:#16243F;
+  --line:#22324F;
+  --text:#E6ECF5;
+  --muted:#93A3BE;
+  --signal:#4FD1E8;
+  --signal-dim:rgba(79,209,232,.12);
+  --amber:#F5B841;
+  --amber-dim:rgba(245,184,65,.12);
+  --green:#5BD69A;
+  --radius-lg:18px;
+  --radius:10px;
+  --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);font-size:17px;line-height:1.6;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:var(--signal);text-decoration:none}
+a:hover{text-decoration:underline;text-underline-offset:3px}
+:focus-visible{outline:2px solid var(--signal);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--signal);color:var(--bg);padding:8px 14px;border-radius:8px;z-index:100}
+.skip:focus{left:8px}
+
+/* faint grid behind the page, like a monitoring console */
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+  background-size:56px 56px;opacity:.18;
+  mask-image:radial-gradient(ellipse at 70% 0%,#000 0%,transparent 65%);
+  -webkit-mask-image:radial-gradient(ellipse at 70% 0%,#000 0%,transparent 65%)}
+
+/* nav */
+header.nav{position:sticky;top:0;z-index:50;background:rgba(11,20,36,.82);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.brand{font-weight:600;color:var(--text);letter-spacing:-.01em;display:flex;align-items:center;gap:10px;white-space:nowrap}
+.brand:hover{text-decoration:none}
+.brand svg{flex:none}
+.nav ul{list-style:none;display:flex;gap:4px;margin:0;padding:0}
+.nav ul a{color:var(--muted);font-size:15px;padding:8px 12px;border-radius:8px}
+.nav ul a:hover{color:var(--text);background:var(--surface);text-decoration:none}
+.menu-btn{display:none;background:none;border:1px solid var(--line);color:var(--text);border-radius:8px;padding:6px 10px;font:inherit;font-size:15px;cursor:pointer}
+
+/* hero */
+.hero{padding:72px 0 56px}
+.hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:center}
+.id{display:flex;gap:22px;align-items:center;margin-bottom:28px}
+.id img{width:112px;height:112px;border-radius:50%;object-fit:cover;object-position:50% 22%;border:2px solid var(--line);box-shadow:0 0 0 6px var(--signal-dim)}
+.avail{display:inline-flex;align-items:center;gap:8px;font-size:14px;color:var(--green);background:rgba(91,214,154,.1);border:1px solid rgba(91,214,154,.28);padding:5px 12px;border-radius:999px}
+.avail i{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 0 0 rgba(91,214,154,.6);animation:pulse 2.4s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(91,214,154,.55)}70%{box-shadow:0 0 0 9px rgba(91,214,154,0)}100%{box-shadow:0 0 0 0 rgba(91,214,154,0)}}
+h1{font-size:clamp(40px,6vw,64px);line-height:1.04;letter-spacing:-.03em;margin:0 0 18px;font-weight:700}
+.lede{font-size:20px;color:var(--muted);max-width:34ch;margin:0 0 30px}
+.lede strong{color:var(--text);font-weight:500}
+.actions{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:9px;font-weight:500;font-size:15.5px;padding:12px 16px;border-radius:var(--radius);border:1px solid var(--line);color:var(--text);background:var(--surface)}
+.btn:hover{text-decoration:none;border-color:var(--signal)}
+.btn.primary{background:var(--signal);color:#06202A;border-color:var(--signal)}
+.btn.primary:hover{background:#7BE0F0}
+.btn svg{width:18px;height:18px}
+
+/* terminal: the one memorable moment */
+.term{background:#08101E;border:1px solid var(--line);border-radius:var(--radius-lg);overflow:hidden;box-shadow:0 30px 80px -30px rgba(79,209,232,.25)}
+.term-bar{display:flex;align-items:center;gap:8px;padding:12px 16px;border-bottom:1px solid var(--line);background:var(--surface)}
+.term-bar span{width:11px;height:11px;border-radius:50%;background:var(--line)}
+.term-bar span:nth-child(1){background:#F26D6D}.term-bar span:nth-child(2){background:var(--amber)}.term-bar span:nth-child(3){background:var(--green)}
+.term-bar b{margin-left:10px;font:400 13px var(--mono);color:var(--muted)}
+.term pre{margin:0;padding:22px 22px 26px;font:400 14.5px/1.75 var(--mono);color:var(--text);white-space:pre-wrap;word-break:break-word;min-height:330px}
+.term .p{color:var(--signal)}
+.term .c{color:var(--muted)}
+.term .ok{color:var(--green)}
+.term .wa{color:var(--amber)}
+.cursor{display:inline-block;width:9px;height:1.1em;background:var(--signal);vertical-align:-3px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+
+/* sections */
+section{padding:72px 0;scroll-margin-top:64px}
+.sec-head{display:flex;align-items:baseline;justify-content:space-between;gap:24px;margin-bottom:36px;flex-wrap:wrap}
+h2{font-size:clamp(28px,3.6vw,38px);letter-spacing:-.02em;line-height:1.15;margin:0;font-weight:700}
+.sec-head p{margin:0;color:var(--muted);max-width:46ch}
+h3{font-size:20px;line-height:1.3;margin:0 0 6px;font-weight:600;letter-spacing:-.01em}
+.muted{color:var(--muted)}
+
+/* about */
+.about{display:grid;grid-template-columns:1.4fr 1fr;gap:56px}
+.about p{margin:0 0 16px;max-width:62ch}
+.facts{margin:0;padding:0;list-style:none;border-top:1px solid var(--line)}
+.facts li{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid var(--line);font-size:16px}
+.facts li span:first-child{color:var(--muted)}
+.facts li span:last-child{text-align:right}
+
+/* research */
+.case{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-lg);padding:36px;display:grid;grid-template-columns:1.5fr 1fr;gap:40px;position:relative;overflow:hidden}
+.case::after{content:"";position:absolute;right:-80px;top:-80px;width:260px;height:260px;border-radius:50%;background:radial-gradient(var(--signal-dim),transparent 70%)}
+.case h3{font-size:clamp(22px,2.6vw,28px);line-height:1.25;margin-bottom:14px}
+.case p{margin:0 0 18px;color:var(--muted);max-width:60ch}
+.badge{display:inline-flex;align-items:center;gap:7px;font-size:13.5px;font-weight:500;padding:4px 11px;border-radius:999px;border:1px solid}
+.badge.amber{color:var(--amber);background:var(--amber-dim);border-color:rgba(245,184,65,.3)}
+.badge.cyan{color:var(--signal);background:var(--signal-dim);border-color:rgba(79,209,232,.3)}
+.badge.green{color:var(--green);background:rgba(91,214,154,.1);border-color:rgba(91,214,154,.3)}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.pipeline{list-style:none;margin:0;padding:0;position:relative;z-index:1}
+.pipeline li{position:relative;padding:0 0 18px 30px;font-size:15.5px}
+.pipeline li::before{content:"";position:absolute;left:5px;top:8px;width:10px;height:10px;border-radius:50%;border:2px solid var(--signal);background:var(--bg)}
+.pipeline li:not(:last-child)::after{content:"";position:absolute;left:10px;top:20px;bottom:-2px;width:2px;background:var(--line)}
+.pipeline b{display:block;font-weight:600}
+.pipeline span{color:var(--muted);font-size:14.5px}
+.pipe-title{font-weight:600;margin:0 0 16px;font-size:15px;color:var(--muted)}
+.small-case{margin-top:20px;background:transparent;border:1px solid var(--line);border-radius:var(--radius-lg);padding:28px 36px;display:flex;justify-content:space-between;gap:24px;align-items:center;flex-wrap:wrap}
+.small-case p{margin:0;color:var(--muted);max-width:64ch}
+.coming{margin-top:20px;padding:20px 24px;border:1px dashed var(--line);border-radius:var(--radius-lg);color:var(--muted);font-size:15.5px}
+
+/* timeline */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+.col-title{font-size:15px;color:var(--muted);font-weight:600;margin:0 0 20px}
+.tl{list-style:none;margin:0;padding:0}
+.tl li{position:relative;padding:0 0 28px 28px;border-left:2px solid var(--line);margin-left:6px}
+.tl li:last-child{border-left-color:transparent;padding-bottom:0}
+.tl li::before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--bg);border:2px solid var(--signal)}
+.tl .when{font-size:14px;color:var(--muted);font-variant-numeric:tabular-nums}
+.tl h3{font-size:18px;margin:2px 0 2px}
+.tl p{margin:4px 0 0;color:var(--muted);font-size:15.5px}
+.tl .org{color:var(--text);opacity:.85;font-size:16px}
+.linkbtn{background:none;border:0;padding:0;font:inherit;font-size:15px;color:var(--signal);cursor:pointer}
+.linkbtn:hover{text-decoration:underline;text-underline-offset:3px}
+
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.skill{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px}
+.skill h3{font-size:17px;margin-bottom:12px}
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin:0;padding:0;list-style:none}
+.chips li{font-size:14px;padding:4px 10px;border-radius:7px;background:var(--surface-2);color:#C9D4E6}
+
+/* certifications */
+.featured{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:36px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-lg);padding:32px;margin-bottom:28px;align-items:start}
+.featured .thumb{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);cursor:zoom-in;background:#fff;padding:0;display:block;width:100%}
+.featured .thumb img{width:100%}
+.featured h3{font-size:24px}
+.courses{list-style:none;margin:18px 0 0;padding:0;columns:2;column-gap:28px}
+.courses li{break-inside:avoid;padding:8px 0;border-bottom:1px solid var(--line);font-size:15px;display:flex;justify-content:space-between;gap:10px}
+.courses a{font-size:13.5px;white-space:nowrap}
+.cert-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.cert{display:flex;flex-direction:column;text-align:left;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;padding:0;color:var(--text);font:inherit;cursor:zoom-in}
+.cert:hover{border-color:var(--signal)}
+.cert img{aspect-ratio:4/3;object-fit:cover;object-position:top;width:100%;background:#fff}
+.cert div{padding:14px 16px 16px}
+.cert b{display:block;font-size:15.5px;font-weight:600;line-height:1.35}
+.cert span{display:block;font-size:13.5px;color:var(--muted);margin-top:4px}
+.cert-note{margin-top:18px;font-size:15px;color:var(--muted)}
+
+/* ctf */
+.ctf{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.ctf .cert img{aspect-ratio:16/10}
+
+/* contact */
+.contact{text-align:left;padding:96px 0 80px}
+.contact h2{font-size:clamp(34px,5vw,56px);max-width:16ch}
+.contact p{color:var(--muted);font-size:19px;max-width:52ch;margin:18px 0 32px}
+.mail{font-size:clamp(18px,2.6vw,26px);font-weight:500;display:inline-block;margin-bottom:28px;word-break:break-all}
+footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+/* lightbox */
+dialog{border:1px solid var(--line);border-radius:var(--radius-lg);padding:0;background:var(--surface);color:var(--text);max-width:min(1100px,94vw);width:auto}
+dialog::backdrop{background:rgba(4,8,16,.82)}
+dialog img{max-height:78vh;width:auto;max-width:100%;margin:0 auto;background:#fff}
+.dlg-bar{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:12px 16px;border-bottom:1px solid var(--line);font-size:15px}
+.dlg-bar button{background:var(--surface-2);border:1px solid var(--line);color:var(--text);border-radius:8px;padding:6px 12px;font:inherit;font-size:14px;cursor:pointer}
+
+/* entrance: the terminal types itself; nothing else animates on load */
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;scroll-behavior:auto!important}
+}
+
+/* responsive */
+@media (max-width:980px){
+  .hero .wrap,.about,.case,.cols,.featured{grid-template-columns:1fr}
+  .hero .wrap{gap:40px}
+  .skills{grid-template-columns:1fr 1fr}
+  .cert-grid{grid-template-columns:repeat(3,1fr)}
+}
+@media (max-width:760px){
+  body{font-size:16px}
+  .wrap{padding:0 16px}
+  .menu-btn{display:block}
+  .nav ul{display:none;position:absolute;top:64px;left:0;right:0;flex-direction:column;background:var(--bg);border-bottom:1px solid var(--line);padding:8px 16px 16px}
+  .nav ul.open{display:flex}
+  .nav ul a{display:block;padding:12px}
+  .hero{padding:44px 0 32px}
+  .id img{width:88px;height:88px}
+  .lede{font-size:18px}
+  .term pre{font-size:13px;min-height:300px;padding:18px}
+  section{padding:56px 0}
+  .case{padding:24px}
+  .small-case{padding:22px 24px}
+  .featured{padding:22px}
+  .courses{columns:1}
+  .skills,.ctf{grid-template-columns:1fr}
+  .cert-grid{grid-template-columns:1fr 1fr;gap:12px}
+  .cert div{padding:12px}
+  .cert b{font-size:14.5px}
+}
+
+/* text-only certificate cards */
+.cert.plain{cursor:default;padding:20px 20px 18px;gap:6px}
+.cert.plain:hover{border-color:var(--line)}
+.cert.plain .iss{font:500 13px var(--mono);color:var(--signal)}
+.cert.plain b{font-size:16.5px}
+.cert-grid.three{grid-template-columns:repeat(3,1fr)}
+@media (max-width:760px){.cert-grid.three{grid-template-columns:1fr}}
+.results{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:0 0 22px}
+.results div{background:var(--surface-2);border:1px solid var(--line);border-radius:var(--radius);padding:12px 14px}
+.results b{display:block;font:600 22px var(--sans);font-variant-numeric:tabular-nums}
+.results span{font-size:13.5px;color:var(--muted)}
+@media (max-width:520px){.results{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Jimil Jingar, home">
+      <svg width="26" height="26" viewBox="0 0 64 64" aria-hidden="true"><circle cx="14" cy="18" r="6" fill="none" stroke="#4FD1E8" stroke-width="4"/><circle cx="14" cy="46" r="6" fill="none" stroke="#4FD1E8" stroke-width="4"/><circle cx="50" cy="32" r="7" fill="#4FD1E8"/><path d="M20 20l23 10M20 44l23-10" stroke="#E6ECF5" stroke-width="4" stroke-linecap="round"/></svg>
+      Jimil Jingar
+    </a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="navlinks">Menu</button>
+    <ul id="navlinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="main">
+<div class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <div class="id">
+        <img src="assets/photo.jpg" alt="Portrait of Jimil Jingar" width="112" height="112">
+        <span class="avail"><i></i>Open to AI/ML roles</span>
+      </div>
+      <h1>Jimil Jingar</h1>
+      <p class="lede">AI and data science engineer in training. I work on <strong>machine learning</strong>, <strong>explainable AI</strong> and <strong>fairness in AI</strong>, and I'm doing my M.Tech in AI &amp; Data Science at Parul University.</p>
+      <div class="actions">
+        <a class="btn primary" href="#contact">Get in touch</a>
+        <a class="btn" href="assets/Jimil_Jingar_Resume.pdf" download>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 21h16"/></svg>
+          Resume</a>
+        <a class="btn" href="https://github.com/jimil-jingar" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.9 1.2 1.9 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.6 18.3 5 18.3 5c.7 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5z"/></svg>
+          GitHub</a>
+        <a class="btn" href="https://www.linkedin.com/in/jimil-jingar-550b37340" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.4 20.5h-3.6v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9v5.7H9.3V9h3.4v1.6c.5-.9 1.6-1.8 3.4-1.8 3.6 0 4.3 2.4 4.3 5.5v6.2zM5.3 7.4a2.1 2.1 0 1 1 0-4.2 2.1 2.1 0 0 1 0 4.2zm1.8 13.1H3.5V9h3.6v11.5zM22.2 0H1.8C.8 0 0 .8 0 1.7v20.6c0 .9.8 1.7 1.8 1.7h20.4c1 0 1.8-.8 1.8-1.7V1.7C24 .8 23.2 0 22.2 0z"/></svg>
+          LinkedIn</a>
+      </div>
+    </div>
+
+    <div class="term" role="img" aria-label="Terminal summary: Jimil Jingar, AI and data science. Focus: machine learning, explainable AI, fairness in AI. FairCKD app is live and reduced bias in all 7 experiments. Open to ML and data science roles.">
+      <div class="term-bar"><span></span><span></span><span></span><b>jimil@ml-lab: ~</b></div>
+      <pre id="term" aria-hidden="true"></pre>
+    </div>
+  </div>
+</div>
+
+<section id="about">
+  <div class="wrap about">
+    <div>
+      <h2 style="margin-bottom:24px">About me</h2>
+      <p>I'm an AI and data science student who likes asking why a model makes the decisions it does. My M.Tech project, FairCKD, is a machine-learning system for chronic kidney disease diagnosis that detects bias between patient groups, reduces it, and explains every prediction.</p>
+      <p>I studied computer science with a specialisation in AI and interned as a front-end developer, so I can take a model from a notebook to a working web app that people can use.</p>
+      <p>I'm looking for roles as a machine learning engineer, data scientist or AI/ML engineer, with teams in India or abroad.</p>
+    </div>
+    <ul class="facts">
+      <li><span>Based in</span><span>Vadodara, Gujarat, India</span></li>
+      <li><span>Studying</span><span>M.Tech AI &amp; Data Science, 2025–2027</span></li>
+      <li><span>CGPA</span><span>8.40 / 10</span></li>
+      <li><span>Looking for</span><span>ML engineer &amp; data science roles</span></li>
+      <li><span>Languages</span><span>English, Hindi, Gujarati</span></li>
+    </ul>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Projects</h2>
+      <p>Each project has its code on GitHub. FairCKD is live and open to try.</p>
+    </div>
+
+    <article class="case">
+      <div style="position:relative;z-index:1">
+        <div class="badges">
+          <span class="badge cyan">M.Tech Phase-II</span>
+          <span class="badge green">Live app</span>
+          <span class="badge amber">Jul–Oct 2026</span>
+        </div>
+        <h3>FairCKD: Fairness-Aware Chronic Kidney Disease Diagnosis</h3>
+        <p>Diagnosis models can look accurate overall while missing far more cases in some patient groups. A standard XGBoost model caught 85% of CKD cases in adults over 60 but only 32% in adults under 60. FairCKD finds these gaps, measures them with five fairness metrics, reduces them, and explains each prediction with SHAP and LIME.</p>
+        <div class="results">
+          <div><b>5,454</b><span>patients analysed</span></div>
+          <div><b>7</b><span>ML models compared</span></div>
+          <div><b>7 / 7</b><span>experiments, bias reduced</span></div>
+        </div>
+        <div class="actions">
+          <a class="btn primary" href="https://fairckd.streamlit.app/" target="_blank" rel="noopener">Open live app</a>
+          <a class="btn" href="https://jimil-jingar.github.io/FairCKD-Bias-Mitigation/" target="_blank" rel="noopener">Project page</a>
+          <a class="btn" href="https://github.com/jimil-jingar/FairCKD-Bias-Mitigation" target="_blank" rel="noopener">View the repository</a>
+        </div>
+      </div>
+      <div style="position:relative;z-index:1">
+        <p class="pipe-title">How a prediction flows through it</p>
+        <ol class="pipeline">
+          <li><b>Train</b><span>Compare 7 classifiers on NHANES and UCI patient data</span></li>
+          <li><b>Detect</b><span>Check error rates for each patient group</span></li>
+          <li><b>Reduce</b><span>Apply 7 mitigation methods and pick the fairest model</span></li>
+          <li><b>Explain</b><span>Show why with SHAP and LIME, and produce a patient report</span></li>
+        </ol>
+      </div>
+    </article>
+
+    <article class="small-case">
+      <div>
+        <div class="badges" style="margin-bottom:10px"><span class="badge green">Academic project</span></div>
+        <h3>Health Medico Management System</h3>
+        <p>A healthcare management system for patient records, appointments and medical histories, with a simple interface that improves communication between doctors and patients.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="sec-head"><h2>Experience &amp; education</h2></div>
+    <div class="cols">
+      <div>
+        <p class="col-title">Internships</p>
+        <ol class="tl">
+          <li>
+            <div class="when">Dec 2024 – Mar 2025</div>
+            <h3>Frontend Developer Intern</h3>
+            <div class="org">MaMo TechnoLabs LLP, Vadodara</div>
+            <p>Three-month full-time internship building web pages with HTML, CSS and JavaScript.</p>
+            <p><button class="linkbtn" data-cert="mamo-internship" data-title="Internship completion, MaMo TechnoLabs LLP">View completion certificate</button></p>
+          </li>
+          <li>
+            <div class="when">Jul 2024</div>
+            <h3>Writing Intern</h3>
+            <div class="org">Marpu Foundation, Social Awareness Wing</div>
+            <p>Content writing for social awareness campaigns.</p>
+          </li>
+        </ol>
+      </div>
+      <div>
+        <p class="col-title">Education</p>
+        <ol class="tl">
+          <li>
+            <div class="when">2025 – 2027</div>
+            <h3>M.Tech, Artificial Intelligence &amp; Data Science</h3>
+            <div class="org">Parul Institute of Engineering &amp; Technology, Parul University</div>
+            <p>CGPA 8.40 after two semesters</p>
+          </li>
+          <li>
+            <div class="when">2021 – 2025</div>
+            <h3>B.Tech, Computer Science &amp; Engineering (AI)</h3>
+            <div class="org">Parul University</div>
+          </li>
+          <li>
+            <div class="when">2019 – 2022</div>
+            <h3>Diploma in Engineering</h3>
+            <div class="org">Parul Institute of Engineering &amp; Technology (GTU)</div>
+            <p>CGPA 9.11, First Class with Distinction</p>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="sec-head"><h2>Skills</h2></div>
+    <div class="skills">
+      <div class="skill"><h3>Machine learning</h3><ul class="chips"><li>Supervised learning</li><li>XGBoost</li><li>Model evaluation</li><li>Cross-validation</li></ul></div>
+      <div class="skill"><h3>Deep learning &amp; NLP</h3><ul class="chips"><li>Deep Learning</li><li>Neural networks</li><li>NLP</li></ul></div>
+      <div class="skill"><h3>Explainable &amp; fair AI</h3><ul class="chips"><li>SHAP</li><li>LIME</li><li>Bias detection</li><li>Bias mitigation</li><li>Fairness metrics</li></ul></div>
+      <div class="skill"><h3>Data</h3><ul class="chips"><li>Data analytics</li><li>Data visualization</li><li>Big Data</li><li>Business analytics</li></ul></div>
+      <div class="skill"><h3>Programming</h3><ul class="chips"><li>Python</li><li>Data structures</li><li>HTML, CSS, JavaScript</li></ul></div>
+      <div class="skill"><h3>Tools &amp; deployment</h3><ul class="chips"><li>Streamlit</li><li>Git &amp; GitHub</li><li>GitHub Pages</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section id="certifications">
+  <div class="wrap">
+    <div class="sec-head"><h2>Certifications</h2></div>
+    <div class="cert-grid three">
+      <div class="cert plain"><span class="iss">Google Cloud · 2024</span><b>Google Cloud Platform Fundamentals</b></div>
+      <div class="cert plain"><span class="iss">Cisco · 2024</span><b>Introduction to Cybersecurity</b></div>
+      <div class="cert plain"><span class="iss">freeCodeCamp · 2023</span><b>Responsive Web Design</b></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <h2>Let's work together</h2>
+    <p>I'm open to machine learning engineer, data scientist and AI/ML roles. Email is the fastest way to reach me.</p>
+    <a class="mail" href="mailto:jimiljingar@gmail.com">jimiljingar@gmail.com</a>
+    <div class="actions">
+      <a class="btn primary" href="mailto:jimiljingar@gmail.com">Send an email</a>
+      <a class="btn" href="https://www.linkedin.com/in/jimil-jingar-550b37340" target="_blank" rel="noopener">Connect on LinkedIn</a>
+      <a class="btn" href="https://github.com/jimil-jingar" target="_blank" rel="noopener">See my GitHub</a>
+      <a class="btn" href="assets/Jimil_Jingar_Resume.pdf" download>Download resume</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="yr">2026</span> Jimil Jingar</span>
+    <span>Built by hand, hosted on GitHub Pages</span>
+  </div>
+</footer>
+
+<dialog id="viewer" aria-labelledby="viewer-title">
+  <div class="dlg-bar"><span id="viewer-title"></span><button id="viewer-close">Close</button></div>
+  <img id="viewer-img" alt="">
+</dialog>
+
+<script>
+// ---- viewer ----
+const dlg=document.getElementById("viewer"), vimg=document.getElementById("viewer-img"), vtitle=document.getElementById("viewer-title");
+document.addEventListener("click",e=>{
+  const el=e.target.closest("[data-cert]"); if(!el) return;
+  vimg.src="assets/certs/"+el.dataset.cert+".jpg"; vimg.alt=el.dataset.title; vtitle.textContent=el.dataset.title;
+  if(dlg.showModal) dlg.showModal(); else window.open(vimg.src,"_blank");
+});
+document.getElementById("viewer-close").onclick=()=>dlg.close();
+dlg.addEventListener("click",e=>{ if(e.target===dlg) dlg.close(); });
+
+// ---- mobile menu ----
+const mb=document.querySelector(".menu-btn"), nl=document.getElementById("navlinks");
+mb.onclick=()=>{const o=nl.classList.toggle("open"); mb.setAttribute("aria-expanded",o); mb.textContent=o?"Close":"Menu";};
+nl.addEventListener("click",e=>{ if(e.target.tagName==="A"){nl.classList.remove("open"); mb.setAttribute("aria-expanded",false); mb.textContent="Menu";}});
+
+document.getElementById("yr").textContent=new Date().getFullYear();
+
+// ---- terminal ----
+const lines=[
+  ["cmd","whoami"],
+  ["out","jimil jingar, ai & data science"],
+  ["out",'<span class="c">m.tech @ parul university, 2025-2027</span>'],
+  ["cmd","cat focus.txt"],
+  ["out","machine learning\nexplainable ai\nfairness in ai"],
+  ["cmd","python fairckd.py --status"],
+  ["out",'streamlit app ........ <span class="ok">live</span>\nbias reduced ......... <span class="wa">7 / 7 experiments</span>'],
+  ["cmd","./availability"],
+  ["out",'ml & data roles ...... <span class="ok">open</span>']
+];
+</script>
+</body>
+</html>
